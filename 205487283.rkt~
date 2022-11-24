@@ -12,19 +12,6 @@ All the tests for all the question are in the end of the file.
 
 
 
-
-
-;------------------------------------------------------------------------------
-
-
-#|
-
-In the function "open-list" I used the function 'append' for adding
-two lists and I activated it recursivly on the list of lists.
-In the end ,the result is a big list with all the elemnets of the inner lists.
-
-|#
-
 ;Qustion 1a
 (: open-list : (Listof(Listof Number)) -> (Listof Number))
 (define (open-list lists)
@@ -36,20 +23,8 @@ In the end ,the result is a big list with all the elemnets of the inner lists.
 )
 
 
-#|
-
-In the function "min&max" I used the helping functions that I built 'min_of_list'
-and 'max_of_list'. I used the function open-list from the first sub-question to organize all the elements,
-and then I passed it to the helping functions to find the minimum  and maximum.
-
-In the function "min&max_apply" things are much easier and instead of using the helping function I just used
-the built-in 'apply' function to find the minimum and maximum.
-
-|#
 
 ;Question 1b
-
-
 
 ;Helping functions:
 (: min_of_list : (Listof Number) -> Number)
@@ -98,19 +73,7 @@ the built-in 'apply' function to find the minimum and maximum.
 
 
 
-#|
 
-I defined the Table object with two constructors.
-
-In the function "search-table" I recursivly search for the input symbol,
- and if it exists i returned it and if it dont I returned #f (because the function will stop when the input table will
-be empty).
-
-In the function "remove-item" I search for the input symbol and if I find it
-I skiped on it and concated the table until the symbol with the table after.
-If the symbol is not in the table the functions returns the same table.
-
-|#
 
 
 ;Question 2.1
@@ -165,7 +128,7 @@ If the symbol is not in the table the functions returns the same table.
 (test (open-list '(() () () (9))) => '(9))
 (test (min&max '((1 2 3) (2 3 3 4) (9 2 -1) (233 11 90))) => '(-1.0 233.0))
 (test (min&max '((1 2 3) (2 3 3 4) (9 2 -1) (233 11 90))) => '(-1.0 233.0))
-(test (min&max '(() (3))) => '(3.0 3.0))
+(test (min&max '(() (3)) => '(3.0 3.0))
 (test (min&max_apply '((1 2 3) (2 3 3 4) (9 2 -1) (233
 11 90))) => '(-1 233))
 
